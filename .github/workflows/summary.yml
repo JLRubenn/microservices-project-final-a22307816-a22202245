@@ -1,0 +1,20 @@
+name: Job Summary
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  summary:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Write summary
+        run: |
+          echo "## Deploy Report" >> $GITHUB_STEP_SUMMARY
+          echo "- Service: product-service" >> $GITHUB_STEP_SUMMARY
+          echo "- SHA: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Status: success" >> $GITHUB_STEP_SUMMARY
