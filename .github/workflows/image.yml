@@ -1,5 +1,4 @@
 name: Build & Push Image
-
 on:
   push:
     branches: [ main ]
@@ -7,7 +6,6 @@ on:
 
 permissions:
   contents: read
-
 jobs:
   image:
     runs-on: ubuntu-latest
