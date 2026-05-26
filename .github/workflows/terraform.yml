@@ -2,10 +2,10 @@ name: Terraform
 
 on:
   pull_request:
-    paths: [ 'terraform/**' ]
+    paths: [ 'terraform-week7/**' ]
   push:
     branches: [ main ]
-    paths: [ 'terraform/**' ]
+    paths: [ 'terraform-week7/**' ]
 
 permissions:
   id-token: write
@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: terraform
+        working-directory: terraform-week7
     steps:
       - uses: actions/checkout@v4
 
