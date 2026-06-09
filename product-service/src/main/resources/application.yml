@@ -71,7 +71,6 @@ logging:
 cloud:
   sqs:
     product-events:
-      enabled: false
-      queue-url: ""
-      region: ""
-
+      enabled: true
+      queue-url: https://sqs.eu-west-1.amazonaws.com/235063678110/microservices-project-dev-order-events
+      region: eu-west-1

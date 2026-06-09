@@ -89,10 +89,9 @@ services:
 cloud:
   sqs:
     product-events-consumer:
-      enabled: false
-      queue-url: ""
-      region: ""
+      enabled: true
+      queue-url: https://sqs.eu-west-1.amazonaws.com/235063678110/microservices-project-dev-order-events
+      region: eu-west-1
       poll-interval-ms: 5000
       max-number-of-messages: 10
       wait-time-seconds: 20
-

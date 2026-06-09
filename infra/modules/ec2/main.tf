@@ -5,6 +5,7 @@ resource "aws_instance" "app" {
   vpc_security_group_ids      = [var.security_group_id]
   key_name                    = var.key_name
   associate_public_ip_address = true
+  iam_instance_profile = aws_iam_instance_profile.ec2_sqs_profile.name
 
   tags = {
     Name        = "${var.project_name}-${var.environment}-app-ec2"
