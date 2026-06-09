@@ -12,7 +12,10 @@ spring:
       ddl-auto: create-drop
     show-sql: false
   kafka:
+    bootstrap-servers: localhost:9092
     consumer:
+      auto-startup: false
+    listener:
       auto-startup: false
 
 cloud:
