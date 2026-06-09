@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
 
   pull_request:
-    paths: [ 'terraform-week7/**' ]
+    paths: [ 'infra/environments/dev/**' ]
   push:
     branches: [ main ]
-    paths: [ 'terraform-week7/**' ]
+    paths: [ 'infra/environments/dev/**' ]
 
 permissions:
   id-token: write
@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: terraform-week7
+        working-directory: infra/environments/dev
     steps:
       - uses: actions/checkout@v4
 
