@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        service: [ user-service, product-service, order-service ]
+        service: [ user-service, product-service, order-service, api-gateway ]
     steps:
       - uses: actions/checkout@v4
       - uses: docker/setup-buildx-action@v3
