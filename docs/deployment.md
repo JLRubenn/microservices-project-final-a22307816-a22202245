@@ -147,3 +147,11 @@ Validates AWS role assumption using GitHub OIDC.
 6. Ansible configures EC2
 7. Docker Compose starts containers
 8. Services become available
+
+---
+
+## Demonstration Video
+
+A complete demonstration of the deployed solution is available at:
+
+https://youtu.be/Q5ywP9bDNYg
