@@ -11,11 +11,6 @@ spring:
     username: orderuser
     password: orderpass
   
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
-  
   jpa:
     open-in-view: false
     hibernate:
