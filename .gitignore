@@ -54,3 +54,16 @@ logs/
 # Service PIDs
 .service-pids
 
+# AWS
+*.pem
+
+# IntelliJ
+out/
+
+# Maven
+**/target/
+
+# H2
+*.mv.db
+*.trace.db
+
