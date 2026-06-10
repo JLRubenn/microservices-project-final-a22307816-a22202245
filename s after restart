@@ -1,0 +1,62 @@
+[35mREADME.md[m[36m:[m## [1;31mDatabase[m
+[35mREADME.md[m[36m:[mThe system uses PostgreSQL [1;31mdatabase[ms running in Docker containers.
+[35mREADME.md[m[36m:[mEach microservice owns its own [1;31mdatabase[m:
+[35mdocs/limitations.md[m[36m:[m### [1;31mDatabase[m
+[35morder-service/pom.xml[m[36m:[m        <!-- H2 [1;31mDatabase[m -->
+[35morder-service/pom.xml[m[36m:[m            <groupId>com.h2[1;31mdatabase[m</groupId>
+[35morder-service/src/main/java/pt/ulusofona/orderservice/OrderServiceApplication.java[m[36m:[m *   <li>Spring Data JPA for [1;31mdatabase[m access</li>
+[35morder-service/src/main/java/pt/ulusofona/orderservice/OrderServiceApplication.java[m[36m:[m *   <li>H2 in-memory [1;31mdatabase[m for development</li>
+[35morder-service/src/main/java/pt/ulusofona/orderservice/model/Order.java[m[36m:[m * <p>This class maps to the "orders" table in the [1;31mdatabase[m and represents
+[35morder-service/src/main/java/pt/ulusofona/orderservice/model/Order.java[m[36m:[m     * Auto-generated using [1;31mdatabase[m identity strategy.
+[35morder-service/src/main/java/pt/ulusofona/orderservice/model/Order.java[m[36m:[m     * is persisted to the [1;31mdatabase[m. It sets both createdAt and updatedAt
+[35morder-service/src/main/java/pt/ulusofona/orderservice/model/Order.java[m[36m:[m     * is updated in the [1;31mdatabase[m. It updates the updatedAt timestamp to the
+[35morder-service/src/main/java/pt/ulusofona/orderservice/model/OrderItem.java[m[36m:[m * <p>This class maps to the "order_items" table in the [1;31mdatabase[m and represents
+[35morder-service/src/main/java/pt/ulusofona/orderservice/model/OrderItem.java[m[36m:[m     * Auto-generated using [1;31mdatabase[m identity strategy.
+[35morder-service/src/main/java/pt/ulusofona/orderservice/repository/OrderRepository.java[m[36m:[m * Repository interface for Order entity [1;31mdatabase[m operations.
+[35morder-service/src/main/java/pt/ulusofona/orderservice/service/OrderService.java[m[36m:[m     * Creates a new order in the [1;31mdatabase[m.
+[35morder-service/src/main/java/pt/ulusofona/orderservice/service/OrderService.java[m[36m:[m     *   <li>Saves the order to the [1;31mdatabase[m</li>
+[35morder-service/src/main/java/pt/ulusofona/orderservice/service/OrderService.java[m[36m:[m     * Retrieves all orders from the [1;31mdatabase[m.
+[35mproduct-service/pom.xml[m[36m:[m        <!-- H2 [1;31mDatabase[m -->
+[35mproduct-service/pom.xml[m[36m:[m            <groupId>com.h2[1;31mdatabase[m</groupId>
+[35mproduct-service/src/main/java/pt/ulusofona/productservice/ProductServiceApplication.java[m[36m:[m *   <li>Spring Data JPA for [1;31mdatabase[m access</li>
+[35mproduct-service/src/main/java/pt/ulusofona/productservice/ProductServiceApplication.java[m[36m:[m *   <li>H2 in-memory [1;31mdatabase[m for development</li>
+[35mproduct-service/src/main/java/pt/ulusofona/productservice/controller/ProductController.java[m[36m:[m     * <p>This endpoint returns a list of all products currently stored in the [1;31mdatabase[m.
+[35mproduct-service/src/main/java/pt/ulusofona/productservice/controller/ProductController.java[m[36m:[m     * the [1;31mdatabase[m. If the product does not exist, a RuntimeException is thrown.
+[35mproduct-service/src/main/java/pt/ulusofona/productservice/dto/ProductResponse.java[m[36m:[m     * Primary key from the [1;31mdatabase[m.
+[35mproduct-service/src/main/java/pt/ulusofona/productservice/model/Product.java[m[36m:[m * <p>This class maps to the "products" table in the [1;31mdatabase[m and represents
+[35mproduct-service/src/main/java/pt/ulusofona/productservice/model/Product.java[m[36m:[m     * Auto-generated using [1;31mdatabase[m identity strategy.
+[35mproduct-service/src/main/java/pt/ulusofona/productservice/model/Product.java[m[36m:[m     * is persisted to the [1;31mdatabase[m. It:
+[35mproduct-service/src/main/java/pt/ulusofona/productservice/model/Product.java[m[36m:[m     * is updated in the [1;31mdatabase[m. It updates the updatedAt timestamp to the
+[35mproduct-service/src/main/java/pt/ulusofona/productservice/repository/ProductRepository.java[m[36m:[m * Repository interface for Product entity [1;31mdatabase[m operations.
+[35mproduct-service/src/main/java/pt/ulusofona/productservice/repository/ProductRepository.java[m[36m:[m     * <p>This method queries the [1;31mdatabase[m for products whose price falls between
+[35mproduct-service/src/main/java/pt/ulusofona/productservice/service/ProductService.java[m[36m:[m * <p>All [1;31mdatabase[m operations are wrapped in transactions. Read operations use
+[35mproduct-service/src/main/java/pt/ulusofona/productservice/service/ProductService.java[m[36m:[m     * Repository dependency for [1;31mdatabase[m operations.
+[35mproduct-service/src/main/java/pt/ulusofona/productservice/service/ProductService.java[m[36m:[m     * Retrieves all products from the [1;31mdatabase[m.
+[35mproduct-service/src/main/java/pt/ulusofona/productservice/service/ProductService.java[m[36m:[m     * <p>This method fetches all products from the [1;31mdatabase[m and converts them
+[35mproduct-service/src/main/java/pt/ulusofona/productservice/service/ProductService.java[m[36m:[m     * <p>This method fetches a product from the [1;31mdatabase[m by ID. If the product
+[35mproduct-service/src/main/java/pt/ulusofona/productservice/service/ProductService.java[m[36m:[m     * Creates a new product in the [1;31mdatabase[m.
+[35mproduct-service/src/main/java/pt/ulusofona/productservice/service/ProductService.java[m[36m:[m     * initializes stockQuantity to 0 if not provided, saves it to the [1;31mdatabase[m, and
+[35mproduct-service/src/main/java/pt/ulusofona/productservice/service/ProductService.java[m[36m:[m     * Deletes a product from the [1;31mdatabase[m.
+[35mproduct-service/src/main/java/pt/ulusofona/productservice/service/ProductService.java[m[36m:[m     * <p>This method queries the [1;31mdatabase[m for products whose name contains the
+[35muser-service/pom.xml[m[36m:[m        <!-- H2 [1;31mDatabase[m -->
+[35muser-service/pom.xml[m[36m:[m            <groupId>com.h2[1;31mdatabase[m</groupId>
+[35muser-service/src/main/java/pt/ulusofona/userservice/UserServiceApplication.java[m[36m:[m *   <li>Spring Data JPA for [1;31mdatabase[m access</li>
+[35muser-service/src/main/java/pt/ulusofona/userservice/UserServiceApplication.java[m[36m:[m *   <li>H2 in-memory [1;31mdatabase[m for development</li>
+[35muser-service/src/main/java/pt/ulusofona/userservice/controller/UserController.java[m[36m:[m     * <p>This endpoint returns a list of all users currently stored in the [1;31mdatabase[m.
+[35muser-service/src/main/java/pt/ulusofona/userservice/controller/UserController.java[m[36m:[m     * the [1;31mdatabase[m. If the user does not exist, a RuntimeException is thrown.
+[35muser-service/src/main/java/pt/ulusofona/userservice/dto/UserResponse.java[m[36m:[m     * Primary key from the [1;31mdatabase[m.
+[35muser-service/src/main/java/pt/ulusofona/userservice/model/User.java[m[36m:[m * <p>This class maps to the "users" table in the [1;31mdatabase[m and represents
+[35muser-service/src/main/java/pt/ulusofona/userservice/model/User.java[m[36m:[m     * Auto-generated using [1;31mdatabase[m identity strategy.
+[35muser-service/src/main/java/pt/ulusofona/userservice/model/User.java[m[36m:[m     * is persisted to the [1;31mdatabase[m. It sets both createdAt and updatedAt
+[35muser-service/src/main/java/pt/ulusofona/userservice/model/User.java[m[36m:[m     * is updated in the [1;31mdatabase[m. It updates the updatedAt timestamp to the
+[35muser-service/src/main/java/pt/ulusofona/userservice/repository/UserRepository.java[m[36m:[m * Repository interface for User entity [1;31mdatabase[m operations.
+[35muser-service/src/main/java/pt/ulusofona/userservice/repository/UserRepository.java[m[36m:[m     * <p>This method queries the [1;31mdatabase[m for a user with the specified email.
+[35muser-service/src/main/java/pt/ulusofona/userservice/service/UserService.java[m[36m:[m * <p>All [1;31mdatabase[m operations are wrapped in transactions. Read operations use
+[35muser-service/src/main/java/pt/ulusofona/userservice/service/UserService.java[m[36m:[m * performing [1;31mdatabase[m operations.
+[35muser-service/src/main/java/pt/ulusofona/userservice/service/UserService.java[m[36m:[m     * Repository dependency for [1;31mdatabase[m operations.
+[35muser-service/src/main/java/pt/ulusofona/userservice/service/UserService.java[m[36m:[m     * Retrieves all users from the [1;31mdatabase[m.
+[35muser-service/src/main/java/pt/ulusofona/userservice/service/UserService.java[m[36m:[m     * <p>This method fetches all users from the [1;31mdatabase[m and converts them
+[35muser-service/src/main/java/pt/ulusofona/userservice/service/UserService.java[m[36m:[m     * <p>This method fetches a user from the [1;31mdatabase[m by ID. If the user
+[35muser-service/src/main/java/pt/ulusofona/userservice/service/UserService.java[m[36m:[m     * Creates a new user in the [1;31mdatabase[m.
+[35muser-service/src/main/java/pt/ulusofona/userservice/service/UserService.java[m[36m:[m     * [1;31mdatabase[m, and returns the created user as a DTO.
+[35muser-service/src/main/java/pt/ulusofona/userservice/service/UserService.java[m[36m:[m     * Deletes a user from the [1;31mdatabase[m.

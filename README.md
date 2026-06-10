@@ -79,9 +79,16 @@ flowchart LR
 - OpenFeign
 - Spring Kafka
 
-### Databases
+## Database
 
-- H2 Database
+The system uses PostgreSQL databases running in Docker containers.
+
+Each microservice owns its own database:
+- userdb
+- productdb
+- orderdb
+
+Persistence is provided through Docker volumes.
 
 ### Containerization
 

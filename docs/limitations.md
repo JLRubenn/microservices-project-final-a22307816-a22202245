@@ -4,17 +4,20 @@
 
 ### Database
 
-Services currently use H2.
+Services use PostgreSQL containers with persistent Docker volumes.
 
-Limitations:
+Current setup:
+- user-service → PostgreSQL (userdb)
+- product-service → PostgreSQL (productdb)
+- order-service → PostgreSQL (orderdb)
 
-- In-memory storage
-- Data loss after restart
+Persistence is maintained after service restarts through Docker volumes.
 
-Future:
+Future improvements:
 - PostgreSQL on Amazon RDS
 - Automated backups
-- Persistent storage
+- Multi-AZ database deployment
+- Monitoring and alerting
 
 ---
 
