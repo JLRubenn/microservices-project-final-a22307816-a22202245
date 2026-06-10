@@ -39,6 +39,17 @@ public class ProductEventSqsPollingConsumer {
                         message.body(),
                         ProductCreatedSqsPayload.class
                 );
+                    if (payload.productId() == null || payload.productId() <= 0) {
+                        throw new IllegalArgumentException("Invalid productId in SQS message");
+                    }
+
+                    if (payload.name() == null || payload.name().isBlank()) {
+                        throw new IllegalArgumentException("Invalid product name in SQS message");
+                    }
+
+                    if (payload.price() == null || payload.price().signum() < 0) {
+                        throw new IllegalArgumentException("Invalid product price in SQS message");
+                    }
                 log.info(
                         "SQS product event: type={} productId={} name={} price={}",
                         payload.eventType(),
